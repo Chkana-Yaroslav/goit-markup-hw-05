@@ -518,3 +518,11 @@ footer .maintext {
 .footer-icon-item-svg {
     fill: #F4F4FD;
 }
+
+.form {
+    display: flex;
+    flex-direction: column;
+        gap: 8px;
+        max-width: 408px;
+        /* border: none; */
+}
