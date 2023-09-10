@@ -525,10 +525,10 @@ footer .maintext {
 }
 
 .footer_input_button {
-    display: inline-flex;
+    display: flex;
     gap: 24px;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center;
+    justify-content: center; */
 
 
 }
@@ -541,7 +541,7 @@ footer fieldset
 .footer-form-header {
         font-size: 16px;
         font-weight: 500;
-        line-height: 24px;
+        line-height: 1.5;
         letter-spacing: 0.02em;
         text-align: left;
         color: #FFFFFF;
@@ -554,17 +554,19 @@ footer fieldset
     width: 264px;
     height: 40px;
     padding-left: 16px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    /* padding-top: 8px;
+    padding-bottom: 8px; */
         font-size: 12px;
         font-weight: 400;
-        line-height: 24px;
+        line-height: 1.5;
         letter-spacing: 0.04em;
         text-align: left;
         color: #FFFFFF;
-        background-color: #2E2F42;
+        /* background-color: #2E2F42; */
         border: 1px solid #FFFFFF;
         border-radius: 4px;
+        background-color: transparent;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
 }
 
 .form-input-info-footer::placeholder {
@@ -574,25 +576,27 @@ footer fieldset
         letter-spacing: 0.04em;
         text-align: left;
         color: #FFFFFF;
-}
+        }
+
 
 .footer_button {
-    width: 165px;
+    min-width: 165px;
     height: 40px;
    background-color: #4D5AE5;
    color: #FFFFFF;
+    font-family: "Roboto", sans-serif;
     font-size: 16px;
     font-weight: 500;
-    line-height: 24px;
+    line-height: 1.5;
     letter-spacing: 0.04em;
     text-align: center;
     border-radius: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 24px; */
+    cursor: pointer;
+    border: none;
+    
     
 .footer-logo-frame {
     margin-left: 16px;
@@ -630,68 +634,83 @@ footer fieldset
     transform: translate(-50%,-50%);
     width: 408px;
     min-height: 584px;
-    padding: 24px;
+    padding: 72px 24px 24px 24px;
     border-radius: 4px;
     background-color: #FCFCFC;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-btn {
     /* background-color: transparent; */
     /* border: none; */
-    padding: 8px;
+    padding: 0;
     line-height: 0;
     position: absolute;
     top: 24px;
     right: 24px;
-    
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     border: 1px solid #0000001A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e7e9fc;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-btn:hover,
 .close-btn:focus
  {
-    fill: #4D5AE5;
+    /* fill: #4D5AE5; */
+    background-color: #404bbf;
+    border: none;
+
 }
 
 .close-btn-icon {
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1)-in;
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form {
-    /* display: flex;
-    flex-direction: column;
-        gap: 8px; */
-        /* max-width: 408px; */
-        /* border: none; */
-        margin-top: 24px;
-        padding-top: 24px;
+.close-btn:hover .close-btn-icon,
+.close-btn:focus .close-btn-icon {
+    fill: #ffffff;
 }
+
 
 .form-header {
     margin-bottom: 16px;
-        font-family: Roboto;
         font-size: 16px;
         font-weight: 500;
-        line-height: 24px;
+        line-height: 1.5;
         letter-spacing: 0.02em;
         text-align: center;
         color: #2E2F42;
 }
 
+.form {
+margin-bottom: 8px;
+}
+
+
 .form-input-info {
     width: 100%;
     height: 40px;
     padding-left: 38px;
-    border: 1px solid #2E2F4266;
+    border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
-    border-color: #2E2F4266;
+    /* border-color: #2E2F4266; */
+    background-color: transparent;
+    outline: transparent;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-input-info:focus {
     border-color: #4D5AE5;
-    outline: transparent;
+    /* outline: transparent; */
 }
 
 .form-input-info:focus + .form-input-icon {
@@ -707,7 +726,12 @@ footer fieldset
     position: absolute;
     top:50%;
     transform: translateY(-50%);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     left: 16px;
+}
+
+.form-textarea {
+    margin-bottom: 16px;
 }
 
 .form-conmment {
@@ -715,15 +739,22 @@ footer fieldset
     height: 120px;
     padding: 8px 16px;
     margin-bottom: 16px;
-    border: 1px solid #2E2F4266;
+    border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
         font-size: 12px;
         font-weight: 400;
-        line-height: 14px;
+        line-height: 1.17;
         letter-spacing: 0.04em;
         text-align: left;
-        color: #2E2F4266;
+        color: rgba(46, 47, 66, 0.4);
+        background-color: transparent;
+        outline: transparent;
         resize: none;
+        transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-coment:focus {
+    border-color: #4D5AE5;
 }
 
 .form-conmment::placeholder {
@@ -735,23 +766,23 @@ footer fieldset
         color: #2E2F4266;
 }
 
-.form-comment-label {
+/* .form-comment-label {
         font-family: Roboto;
         font-size: 12px;
         font-weight: 400;
         line-height: 14px;
         letter-spacing: 0.04em;
         text-align: left;
-        color: #8E8F99;
-}
+        color: #8E8F99; */
+
 
 .form-contacts {
         /* font-family: Roboto; */
         font-size: 12px;
         font-weight: 400;
-        line-height: 14px;
+        line-height: 1.17;
         letter-spacing: 0.04em;
-        text-align: left;
+        /* text-align: left; */
         color: #8E8F99;
         display: block;
         margin-bottom: 4px;
@@ -765,13 +796,17 @@ footer fieldset
 
 .form-accept {
 
-        /* font-family: Roboto; */
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 14px;
-        letter-spacing: 0.04em;
-        text-align: left;
-        color: #8E8F99;
+        margin-bottom: 24px;
+        
+}
+
+.form-accept-text {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    /* text-align: left; */
+    color: #8E8F99;
 }
 
 .form-input-accept {
@@ -784,16 +819,17 @@ footer fieldset
 
 .form-input-accept:checked + .form-accept-text > .form-own-checkbox {
     background-color: #404BBF;
-    fill: #FFFFFF;
+    border: none;
+    fill: #F4F4FD;
 }
 
-.form-input-accept:focus+.form-accept-text>.form-own-checkbox {
+/* .form-input-accept:focus+.form-accept-text>.form-own-checkbox {
     outline: 1px solid #4D5AE5;
-}
+} */
 
 
 .form-accept-privacy {
-    font-family: Roboto;
+    /font-family: Roboto;
         font-size: 12px;
         font-weight: 400;
         line-height: 16px;
@@ -809,17 +845,22 @@ footer fieldset
     align-items: center;
     width: 16px;
     height: 16px;
-    border: 1px solid #2E2F4266;
+    border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 2px;
     cursor: pointer;
     fill: transparent;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-button {
-   
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
     justify-content: center;
     align-items: center;
-    width: 169px;
+    min-width: 169px;
     height: 56px;
     padding: 16px 32px;
     margin-left: auto;
@@ -832,4 +873,5 @@ footer fieldset
     color: #FFFFFF;
     border: none;
     cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
