@@ -599,14 +599,12 @@ footer fieldset
     align-items: center;
     cursor: pointer;
     border: none;
+}
     
-    
-.footer-logo-frame {
-    margin-left: 16px;
+.footer_frame_logo {
+margin-left: 16px;
 }
 
-
-}
 
 .backdrop {
     position: fixed;
